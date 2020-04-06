@@ -1,0 +1,11 @@
+<header>
+    <nav>
+        <a *ngFor="let option of optionsMenu" [routerLink]="option.path" routerLinkActive="active">
+            {{option.description}}
+        </a>
+    </nav>
+</header>
+<main>
+    <router-outlet></router-outlet>
+</main>
+<footer></footer>
