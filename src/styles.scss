@@ -1,1 +1,33 @@
-/* You can add global styles to this file, and also import other style files */
+$color-primario  : #0C0D0E;
+$color-secundario: #0B1225;
+$color-terciario : #414A58;
+$color-fondo     :#8A93A7;
+$color-letra     :#BCC5D9;
+
+/**
+*Menu
+*/
+.nav {
+    background-color: $color-secundario;
+}
+
+.nav a.nav-link {
+    color: $color-letra;
+    font-size: 1.5em;
+}
+.nav a.nav-link.active {
+    font-weight: bold;
+}
+.nav a.nav-link:hover {
+    text-decoration: underline;
+}
+
+
+/**
+*Contenedor
+*/
+
+.container{
+    margin-top: 2em;
+    background-color: $color-fondo;
+}
