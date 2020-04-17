@@ -17,6 +17,9 @@ import { PlanetListComponent } from './components/planets/planet-list/planet-lis
 import { PeopleListComponent } from './components/people/people-list/people-list.component';
 import { FilmListComponent } from './components/films/film-list/film-list.component';
 import { NgBootstrapModule } from './ng-bootstrap/ng-bootstrap.module';
+import { HomeComponent } from './components/home/home.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SliderModule } from 'angular-image-slider';
 
 @NgModule({
     declarations: [
@@ -33,12 +36,15 @@ import { NgBootstrapModule } from './ng-bootstrap/ng-bootstrap.module';
         SpecieListComponent,
         PlanetListComponent,
         PeopleListComponent,
-        FilmListComponent
+        FilmListComponent,
+        HomeComponent
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
-        NgBootstrapModule
+        NgBootstrapModule,
+        BrowserAnimationsModule,
+        SliderModule
     ],
     providers: [],
     bootstrap: [AppComponent]

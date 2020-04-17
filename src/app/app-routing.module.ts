@@ -8,7 +8,7 @@ import { PlanetListComponent } from './components/planets/planet-list/planet-lis
 import { VehicleListComponent } from './components/vehicles/vehicle-list/vehicle-list.component';
 import { StarshipListComponent } from './components/starships/starship-list/starship-list.component';
 import { SpecieListComponent } from './components/species/specie-list/specie-list.component';
-
+import {HomeComponent} from './components/home/home.component';
 const routes: Routes = [
     {
         path: "films",
@@ -35,8 +35,12 @@ const routes: Routes = [
         component: SpecieListComponent
     },
     {
+        path:"home",
+        component: HomeComponent
+    },
+    {
         path: '',
-        redirectTo: '/films',
+        redirectTo: '/home',
         pathMatch: 'full'
     },
     {
