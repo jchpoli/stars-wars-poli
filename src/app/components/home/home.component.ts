@@ -7,9 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  public imagesUrl;
 
   ngOnInit(): void {
+     this.imagesUrl=['../../assets/PeliUno.jpg','../../assets/PeliDos.jpg','../../assets/PeliTres.jpg','../../assets/PeliCuatro.jpg','../../assets/PeliCinco.jpg','../../assets/PeliSeis.jpg',,'../../assets/PeliSiete.jpg'];
   }
 
 }
