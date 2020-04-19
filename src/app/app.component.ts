@@ -1,12 +1,15 @@
 import { Component } from '@angular/core';
-import { optionsMenu } from './config/menu';
+import { dataOptionsMenu } from './config/menu';
 
 @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.scss']
+selector: 'app-root',
+templateUrl: './app.component.html',
+styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-    title = 'stars-wars-poli';
-    public optionsMenu = optionsMenu;
+
+public optionsMenu = dataOptionsMenu;
+
+    show: boolean = true
 }
+

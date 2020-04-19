@@ -1,25 +1,30 @@
 <header>
-    <nav>
-        <a *ngFor="let option of optionsMenu" [routerLink]="option.path" routerLinkActive="active">
+    <nav class="nav">
+        <a href="#" class="nav-link">
+            <img src="assets/images/logo.png" alt="" class="logo">
+        </a>
+        <a *ngFor="let option of optionsMenu" [routerLink]="option.path" routerLinkActive="active"
+            class="nav-link">
             {{option.description}}
         </a>
     </nav>
 </header>
-<main>
+<main class="container">
     <router-outlet></router-outlet>
 </main>
-<body>
-    <div style="background-color: #fafafa;
-	margin: 1rem;
-	padding: 1rem;
-	border: 2px solid #ccc;
-	/* IMPORTANTE */
-	text-align: center;">    .
-	
-	<h1>404</h1>
-	<br>
-	<h2>SITIO EN CONSTRUCCION</h2>
-	<br>
-    <h4>POLITECNICO GRANCOLOMBIANO</h4>
+
+<div class="container" *ngIf="show">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="error-template">
+                <h1>
+                    Oops!</h1>
+                <h2>
+                    no existe informacion para visualizar
+                </h2>
+            </div>
+        </div>
+    </div>
 </div>
+
 <footer></footer>
