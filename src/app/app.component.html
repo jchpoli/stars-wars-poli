@@ -12,4 +12,19 @@
 <main class="container">
     <router-outlet></router-outlet>
 </main>
+
+<div class="container" *ngIf="show">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="error-template">
+                <h1>
+                    Oops!</h1>
+                <h2>
+                    no existe informacion para visualizar
+                </h2>
+            </div>
+        </div>
+    </div>
+</div>
+
 <footer></footer>
