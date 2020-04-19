@@ -10,7 +10,11 @@ export class HomeComponent implements OnInit {
   public imagesUrl;
 
   ngOnInit(): void {
-     this.imagesUrl=['../../assets/PeliUno.jpg','../../assets/PeliDos.jpg','../../assets/PeliTres.jpg','../../assets/PeliCuatro.jpg','../../assets/PeliCinco.jpg','../../assets/PeliSeis.jpg',,'../../assets/PeliSiete.jpg'];
+     this.imagesUrl=['../../assets/images/PeliUno.jpg','../../assets/images/PeliDos.jpg','../../assets/images/PeliTres.jpg','../../assets/images/PeliCuatro.jpg','../../assets/images/PeliCinco.jpg','../../assets/images/PeliSeis.jpg',,'../../assets/images/PeliSiete.jpg'];
+     var left = document.getElementsByClassName("overlay-left");
+     var right = document.getElementsByClassName("overlay-right");
+     left[0].classList.remove("overlay-left");
+     right[0].classList.remove("overlay-right");
   }
 
 }
