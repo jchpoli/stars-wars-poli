@@ -15,7 +15,8 @@ Seguido de esto se debe clonar este repositorio con el comando ``` git clone -b 
 Este proyecto utiliza la librería [https://ng-bootstrap.github.io/](ng-bootstrap), la cual requiere para su configuración los siguientes pasos dentro de su proyecto:
 * Instalar la dependencia *localize* con el comando ``` ng add @angular/localize ```.
 * Instalar la dependencia [https://ng-bootstrap.github.io/](ng-bootstrap) con el comando ``` npm install --save @ng-bootstrap/ng-bootstrap ```.
-* Instalar la dependencia [https://www.npmjs.com/package/jquery](JQuery) con el comando ``` npm install --save jquery ```.
+* Instalar la dependencia [https://www.npmjs.com/package/jquery](JQuery) con el comando ``` npm install jquery --save```.
+* Instalar la dependencia [https://www.npmjs.com/package/ng-image-slider](Angular Image Slider) con el comando ``` npm install ng-image-slider --save ```.
 
 ## Despliegue
 
