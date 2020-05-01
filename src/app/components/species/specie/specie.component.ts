@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {StarWarsService} from 'src/app/servicios/especies.service';
 
 @Component({
   selector: 'app-specie',
@@ -7,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SpecieComponent implements OnInit {
 
-  constructor() { }
+  constructor(private starWars: StarWarsService) {
+    alert(1)
+    this.starWars.getNewRelease().subscribe((data: any) => {
+      console.log(data.results);
+    });
+  }
 
   ngOnInit(): void {
   }

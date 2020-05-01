@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {StarWarsService} from 'src/app/servicios/especies.service';
 
 @Component({
   selector: 'app-specie-list',
@@ -6,8 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./specie-list.component.scss']
 })
 export class SpecieListComponent implements OnInit {
+  
+  Especies: any[] = [];
+  show: boolean = false
+  constructor(private starWars: StarWarsService) {
+    
 
-  constructor() { }
+    this.starWars.getNewRelease().subscribe((data: any) => {
+      this.Especies = data.results;
+      console.log(data.results);
+    });
+  }
 
   ngOnInit(): void {
   }

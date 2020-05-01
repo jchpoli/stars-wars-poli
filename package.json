@@ -24,6 +24,7 @@
     "angular-image-slider": "0.0.9",
     "bootstrap": "^4.4.1",
     "jquery": "^3.5.0",
+    "ng-image-slider": "^2.4.1",
     "rxjs": "~6.5.4",
     "save": "^2.4.0",
     "tslib": "^1.10.0",

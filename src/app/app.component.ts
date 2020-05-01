@@ -10,6 +10,6 @@ export class AppComponent {
 
 public optionsMenu = dataOptionsMenu;
 
-    show: boolean = true
+    show: boolean = false
 }
 
