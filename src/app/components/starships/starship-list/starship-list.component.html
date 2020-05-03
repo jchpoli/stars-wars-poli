@@ -1,6 +1,6 @@
-<div class="container w-75 contenedor-listado">
+<div class="container-fluid w-75">
     <h2>LISTA DE NAVES</h2>
-    <div class="card mb-3" *ngFor='let starship of starships'>
+    <div class="card mb-3 item-lista" *ngFor='let starship of starships'>
         <div class="row no-gutters" data-toggle="modal" data-target="#detalleNave">
             <div class="col-md-4">
                 <img class="card-img-top imagen-listado" (click)="seleccionarStarship(starship)"
@@ -21,7 +21,7 @@
     <div class="modal fade" id="detalleNave" tabindex="-1" role="dialog" aria-labelledby="detalleNaveLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-xl" role="document">
-            <div class="modal-content">
+            <div class="modal-content"  *ngIf="starshipActual">
                 <div class="modal-header">
                     <h5 class="modal-title text-center" id="detalleNaveLabel">{{starshipActual.name}}</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -29,9 +29,9 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <app-starship *ngIf="starshipActual" [starship]="starshipActual"></app-starship>
+                    <app-starship [starship]="starshipActual"></app-starship>
                 </div>
             </div>
         </div>
-    </div>
+    </div> 
 </div>

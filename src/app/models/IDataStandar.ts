@@ -1,6 +1,6 @@
-export interface IDataStandar {
+export interface IDataStandar<T> {
     count: number;
     next?: string;
     previus?: string;
-    results?: any[];
+    results?: T[];
 }

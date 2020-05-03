@@ -15,7 +15,7 @@ export abstract class HttpComun<T> {
     public abstract getPathURL(): string;
 
     public getAll(pagina?: string, conSpinner: boolean = true) {
-        let observable = this.http.get<IDataStandar>(`${URL_ROOT}${this.getPathURL()}?page=${pagina || 1}`);
+        let observable = this.http.get<IDataStandar<T>>(`${URL_ROOT}${this.getPathURL()}?page=${pagina || 1}`);
         if (conSpinner) {
             this.spinner.show();
             return observable.pipe(
@@ -28,13 +28,13 @@ export abstract class HttpComun<T> {
     }
 
     public getUnique(id: string, conSpinner: boolean = true): any {
-        let observable = this.http.get<T>(`${URL_ROOT}${this.getPathURL()}/${id}`);
+        let observable = this.http.get<T>(`${URL_ROOT}${this.getPathURL()}${id}`);
         if (conSpinner) {
             this.spinner.show();
             return observable.pipe(
                 finalize(() => {
                     this.spinner.hide();
-                })
+                }) 
             )
         }
         return observable;
