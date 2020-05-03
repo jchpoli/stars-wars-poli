@@ -1,7 +1,7 @@
 $color-primario  : #0C0D0E;
 $color-secundario: #0B1225;
 $color-terciario : #414A58;
-$color-fondo     :#8A93A7;
+$color-fondo     :#BCC5D9;
 $color-letra     :#BCC5D9;
 
 /**
@@ -30,4 +30,20 @@ $color-letra     :#BCC5D9;
 .container{
     margin-top: 2em;
     background-color: $color-fondo;
+}
+
+h2{
+    color: $color-secundario;
+    text-align: center;
+}
+.contenedor-listado{
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+.imagen-listado {
+    width: 100%;
+    height: 100%;
+}
+.card-body .lista-datos li{
+    list-style: none;
 }
