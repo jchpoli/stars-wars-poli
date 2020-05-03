@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
@@ -22,6 +21,9 @@ import { HomeComponent } from './components/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SliderModule } from 'angular-image-slider';
 import { NgxSpinnerModule } from "ngx-spinner";
+import { FilterPipe } from './components/films/film/filterFilms.pipe';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
     declarations: [
@@ -39,7 +41,8 @@ import { NgxSpinnerModule } from "ngx-spinner";
         PlanetListComponent,
         PeopleListComponent,
         FilmListComponent,
-        HomeComponent
+        HomeComponent,
+        FilterPipe
     ],
     imports: [
         BrowserModule,
@@ -48,10 +51,12 @@ import { NgxSpinnerModule } from "ngx-spinner";
         BrowserAnimationsModule,
         SliderModule,
         HttpClientModule,
-        NgxSpinnerModule
+        NgxSpinnerModule,
+        FormsModule,
+        ReactiveFormsModule
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
-    providers: [],
+    providers: [DatePipe],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
