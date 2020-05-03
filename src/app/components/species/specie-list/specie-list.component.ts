@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {StarWarsService} from 'src/app/servicios/especies.service';
+import {StarWarsService} from 'src/app/services/especies.service';
 
 @Component({
   selector: 'app-specie-list',
