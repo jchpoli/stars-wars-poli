@@ -21,6 +21,9 @@ import { NgBootstrapModule } from './ng-bootstrap/ng-bootstrap.module';
 import { HomeComponent } from './components/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SliderModule } from 'angular-image-slider';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FilterPipe } from './components/films/film/filterFilm.pipe';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
     declarations: [
@@ -38,7 +41,8 @@ import { SliderModule } from 'angular-image-slider';
         PlanetListComponent,
         PeopleListComponent,
         FilmListComponent,
-        HomeComponent
+        HomeComponent,
+        FilterPipe
     ],
     imports: [
         BrowserModule,
@@ -46,9 +50,11 @@ import { SliderModule } from 'angular-image-slider';
         NgBootstrapModule,
         BrowserAnimationsModule,
         SliderModule,
-        HttpClientModule
+        HttpClientModule,
+        FormsModule,
+        ReactiveFormsModule
     ],
-    providers: [],
+    providers: [DatePipe],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
