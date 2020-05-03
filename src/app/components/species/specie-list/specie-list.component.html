@@ -1,13 +1,17 @@
-<div class="card-columns m-2" style="margin: 1em auto">
-    <div class="card" *ngFor='let especies of Especies'>
-      <div class="card-body">
-        <h6> <span class="card-title" style="font-weight: bold">Nombre</span> : {{ especies.name }} </h6>
-        <h6 ><span class="card-title" style="font-weight: bold">Lenguaje:</span> {{ especies.language }}</h6>
-        <h6 ><span class="card-title" style="font-weight: bold">Clasificacion:</span>{{ especies.classification }}</h6>
-        <h6 ><span class="card-title" style="font-weight: bold">Designacion:</span>{{ especies.designation }}</h6>
-        <!--h6 ><span class="card-title" style="font-weight: bold">Ojos de color:</span>{{ especies.eye_colors }}</h6-->
-      </div>
+ <div class="container">   
+    <h1>Prueba de tarjetas</h1>
+    <div class="card-columns m-5" style="margin: 1em auto">
+        <div class="card" *ngFor='let especies of Especies'>
+        <img class="card-img-top" src="https://i.ytimg.com/vi/qxjthW0BYlQ/maxresdefault.jpg">  
+        <div class="card-body">
+            <h6> <span class="card-title" style="font-weight: bold">Nombre</span> : {{ especies.name }} </h6>
+            <h6 ><span class="card-title" style="font-weight: bold">Lenguaje:</span> {{ especies.language }}</h6>
+            <h6 ><span class="card-title" style="font-weight: bold">Clasificacion:</span>{{ especies.classification }}</h6>
+            <h6 ><span class="card-title" style="font-weight: bold">Designacion:</span>{{ especies.designation }}</h6>
+            <!--h6 ><span class="card-title" style="font-weight: bold">Ojos de color:</span>{{ especies.eye_colors }}</h6-->
+        </div>
+        </div>
     </div>
-  </div>
+ </div>
 
   
