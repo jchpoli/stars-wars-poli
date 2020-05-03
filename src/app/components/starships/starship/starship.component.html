@@ -1,1 +1,66 @@
-<p>starship works!</p>
+<div class="card mb-3" *ngIf="starship;else sinInformacion">
+
+    <div class="row no-gutters">
+        <div class="col-md-4">
+            <img class="card-img-top imagen-listado"
+                src="https://motor.elpais.com/wp-content/uploads/2019/12/Porsche-Star-Wars-6-1800x728.jpg">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Caracteristica</th>
+                            <th scope="col">Detalle</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Nombre</th>
+                            <td>{{starship.name}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Modelo</th>
+                            <td>{{starship.model}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Manufacturador</th>
+                            <td>{{starship.manufacturer}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Clase</th>
+                            <td>{{starship.starship_class}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Costo</th>
+                            <td>{{starship.cost_in_credits}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Peso Máximo</th>
+                            <td>{{starship.cargo_capacity}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Velocidad Máxima</th>
+                            <td>{{starship.max_atmosphering_speed}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Tripulación Mínima</th>
+                            <td>{{starship.crew}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Cantidad Máxima de Pasajeros</th>
+                            <td>{{starship.passengers}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<ng-template #sinInformacion>
+    <ngb-alert [dismissible]="false">
+        <p class="text-center bold">
+            <strong> Informaci&oacute;n</strong>
+        <button type="button" class="btn btn-dark" routerLink="/starships">Volver</button></p>
+    </ngb-alert>
+</ng-template>

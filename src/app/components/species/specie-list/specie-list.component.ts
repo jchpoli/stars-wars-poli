@@ -1,25 +1,26 @@
 import { Component, OnInit } from '@angular/core';
-import {StarWarsService} from 'src/app/servicios/especies.service';
+import { SpecieService } from 'src/app/services/specie.service';
+import { ISpecie } from 'src/app/models/ISpecie';
 
 @Component({
-  selector: 'app-specie-list',
-  templateUrl: './specie-list.component.html',
-  styleUrls: ['./specie-list.component.scss']
+    selector: 'app-specie-list',
+    templateUrl: './specie-list.component.html',
+    styleUrls: ['./specie-list.component.scss']
 })
 export class SpecieListComponent implements OnInit {
-  
-  Especies: any[] = [];
-  show: boolean = false
-  constructor(private starWars: StarWarsService) {
-    
 
-    this.starWars.getNewRelease().subscribe((data: any) => {
-      this.Especies = data.results;
-      console.log(data.results);
-    });
-  }
+    public especies: ISpecie[];
+    constructor(private specieService: SpecieService) { }
 
-  ngOnInit(): void {
-  }
+    ngOnInit(): void {
+        this.specieService.getAll().subscribe(
+            data => {
+                this.especies = data.results;
+            },
+            err => {
+                console.error(err);
+            }
+        );
+    }
 
 }

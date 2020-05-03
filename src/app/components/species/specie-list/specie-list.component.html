@@ -1,17 +1,21 @@
- <div class="container">   
-    <h1>Especies</h1>
-    <div class="card-columns m-5" style="margin: 1em auto">
-        <div class="card" *ngFor='let especies of Especies'>
-        <img class="card-img-top" src="https://defa.wdfiles.com/local--files/yze-species/Aliens%20-%20x%20many.jpg">  
-        <div class="card-body">
-            <h6> <span class="card-title" style="font-weight: bold">Nombre</span> : {{ especies.name }} </h6>
-            <h6 ><span class="card-title" style="font-weight: bold">Lenguaje:</span> {{ especies.language }}</h6>
-            <h6 ><span class="card-title" style="font-weight: bold">Clasificacion:</span>{{ especies.classification }}</h6>
-            <h6 ><span class="card-title" style="font-weight: bold">Designacion:</span>{{ especies.designation }}</h6>
-            <!--h6 ><span class="card-title" style="font-weight: bold">Ojos de color:</span>{{ especies.eye_colors }}</h6-->
-        </div>
+<div class="container-fluid w-75">
+    <h2>LISTA DE ESPECIES</h2>
+    <div class="card mb-3" *ngFor='let especie of especies'>
+        <div class="row no-gutters">
+            <div class="col-md-4">
+                <img class="card-img-top imagen-listado"
+                    src="https://defa.wdfiles.com/local--files/yze-species/Aliens%20-%20x%20many.jpg">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <ul class="lista-datos">
+                        <li class="card-text"><strong>Nombre:</strong>{{especie.name}}</li>
+                        <li class="card-text"><strong>Lenguaje:</strong>{{especie.language}}</li>
+                        <li class="card-text"><strong>Clasificaci&oacute;n:</strong>{{especie.classification}}</li>
+                        <li class="card-text"><strong>Designaci&oacute;n:</strong>{{especie.designation}}</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
- </div>
-
-  
+</div>
