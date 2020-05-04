@@ -21,34 +21,38 @@ import { HomeComponent } from './components/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SliderModule } from 'angular-image-slider';
 import { NgxSpinnerModule } from "ngx-spinner";
+import {FormsModule} from '@angular/forms';
+import {FilterPipe} from './components/films/film/filterFilm.pipe';
 
 @NgModule({
-    declarations: [
-        AppComponent,
-        PageNotFoundComponent,
-        FilmComponent,
-        PeopleComponent,
-        PlanetComponent,
-        SpecieComponent,
-        StarshipComponent,
-        VehicleComponent,
-        VehicleListComponent,
-        StarshipListComponent,
-        SpecieListComponent,
-        PlanetListComponent,
-        PeopleListComponent,
-        FilmListComponent,
-        HomeComponent
-    ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        NgBootstrapModule,
-        BrowserAnimationsModule,
-        SliderModule,
-        HttpClientModule,
-        NgxSpinnerModule
-    ],
+     declarations: [
+          AppComponent,
+          PageNotFoundComponent,
+          FilmComponent,
+          PeopleComponent,
+          PlanetComponent,
+          SpecieComponent,
+          StarshipComponent,
+          VehicleComponent,
+          VehicleListComponent,
+          StarshipListComponent,
+          SpecieListComponent,
+          PlanetListComponent,
+          PeopleListComponent,
+          FilmListComponent,
+          HomeComponent,
+          FilterPipe
+     ],
+     imports: [
+          BrowserModule,
+          AppRoutingModule,
+          NgBootstrapModule,
+          BrowserAnimationsModule,
+          SliderModule,
+          HttpClientModule,
+          NgxSpinnerModule,
+          FormsModule
+     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
     providers: [],
     bootstrap: [AppComponent]
