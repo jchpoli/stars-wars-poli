@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
@@ -21,10 +20,8 @@ import { NgBootstrapModule } from './ng-bootstrap/ng-bootstrap.module';
 import { HomeComponent } from './components/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SliderModule } from 'angular-image-slider';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { FilterPipe } from './components/films/film/filterFilm.pipe';
-import { DatePipe } from '@angular/common';
 import { NgxSpinnerModule } from "ngx-spinner";
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -41,8 +38,7 @@ import { NgxSpinnerModule } from "ngx-spinner";
         PlanetListComponent,
         PeopleListComponent,
         FilmListComponent,
-        HomeComponent,
-        FilterPipe
+        HomeComponent
     ],
     imports: [
         BrowserModule,
@@ -51,12 +47,10 @@ import { NgxSpinnerModule } from "ngx-spinner";
         BrowserAnimationsModule,
         SliderModule,
         HttpClientModule,
-        FormsModule,
-        ReactiveFormsModule,
         NgxSpinnerModule
     ],
-    providers: [DatePipe],
-    bootstrap: [AppComponent],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

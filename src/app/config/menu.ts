@@ -39,4 +39,5 @@ export const dataOptionsMenu: DataOptionMenu[] = [
         description: "Especies",
         component: SpecieListComponent
     }
+
 ];
