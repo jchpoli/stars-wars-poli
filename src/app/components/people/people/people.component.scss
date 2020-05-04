@@ -1,0 +1,20 @@
+@import '../../assets/scss/_colors';
+
+
+hr {
+  border: 2px solid #A5111A;
+}
+
+.btn-warning {
+  &:focus {
+    outline: none;
+  }
+}
+.menu-bar {
+  width: 100%;
+}
+.menu-item {
+  color: #999;
+  text-align: left;
+  transition: all 100ms ease-in;
+}
