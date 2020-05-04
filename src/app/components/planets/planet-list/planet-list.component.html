@@ -1,1 +1,22 @@
-<p>planet-list works!</p>
+<div class="container-fluid w-75">
+     <h2>Lista de Planetas</h2>
+     <div class="card mb-3" *ngFor='let planet of planets'>
+          <div class="row no-gutters">
+               <div class="col-md-4">
+                    <img class="card-img-top imagen-listado"
+                         src="assets/images/mustafar-tall.jpg">
+               </div>
+               <div class="col-md-8">
+                    <div class="card-body">
+                         <ul class="lista-datos">
+                              <li class="card-text"><strong>Nombre: </strong>{{planet.name}}</li>
+                              <li class="card-text"><strong>Terreno: </strong>{{planet.terrain}}</li>
+                              <li class="card-text"><strong>Clima: </strong>{{planet.climate}}</li>
+                              <li class="card-text"><strong>Diametro: </strong>{{planet.diameter}} KM</li>
+                         </ul>
+                    </div>
+               </div>
+          </div>
+     </div>
+</div>
+

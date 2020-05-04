@@ -42,8 +42,7 @@ import { NgxSpinnerModule } from "ngx-spinner";
         PeopleListComponent,
         FilmListComponent,
         HomeComponent,
-        FilterPipe,
-        NgxSpinnerModule
+        FilterPipe
     ],
     imports: [
         BrowserModule,
@@ -53,7 +52,8 @@ import { NgxSpinnerModule } from "ngx-spinner";
         SliderModule,
         HttpClientModule,
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        NgxSpinnerModule
     ],
     providers: [DatePipe],
     bootstrap: [AppComponent],
