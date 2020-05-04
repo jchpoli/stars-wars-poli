@@ -1,27 +1,27 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { CharacterService } from '../character.service';
+import { peopleService } from '../people.service';
 import { Observable } from 'rxjs/Observable';
 
 @Component({
-  selector: 'app-character-list',
-  templateUrl: './character-list.component.html',
-  styleUrls: ['./character-list.component.scss']
+  selector: 'app-people-list',
+  templateUrl: './people-list.component.html',
+  styleUrls: ['./people-list.component.scss']
 })
-export class CharacterListComponent implements OnInit {
+export class PeopleListComponent implements OnInit {
 
-  @Output() selectedCharacter: EventEmitter<string> = new EventEmitter<string>();
-  $charactersJSON: Observable<{name: string, url: string}>;
+  @Output() selectedPeople: EventEmitter<string> = new EventEmitter<string>();
+  $peopleJSON: Observable<{name: string, url: string}>;
   activeChar: string;
 
-  constructor(private cs: CharacterService) { }
+  constructor(private cs: PeopleService) { }
 
   ngOnInit() {
-    this.$charactersJSON = this.cs.getCharacters();
+    this.$peopleJSON = this.cs.getPeople();
   }
 
-  handleCharSelection(character: {name: string; url: string}) {
-    this.activeChar = character.name;
-    this.selectedCharacter.emit(character.url);
+  handleCharSelection(people: {name: string; url: string}) {
+    this.activeChar = people.name;
+    this.selectedpeople.emit(people.url);
   }
 
 }
