@@ -1,3 +1,4 @@
+  
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PeopleListComponent } from './people-list.component';
@@ -19,7 +20,8 @@ describe('PeopleListComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should be created', () => {
     expect(component).toBeTruthy();
   });
+
 });
