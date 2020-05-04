@@ -22,8 +22,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SliderModule } from 'angular-image-slider';
 import { NgxSpinnerModule } from "ngx-spinner";
 import {FormsModule} from '@angular/forms';
-import {FilterPipe} from './components/films/film/filterFilms.pipe';
-import {FilterPipeVehicles} from './components/vehicles/vehicle/filterVehicle.pipe';
 import { DatePipe } from '@angular/common';
 import { FiltroPipe } from './pipes/filtro.pipe';
 
@@ -44,9 +42,7 @@ import { FiltroPipe } from './pipes/filtro.pipe';
           PeopleListComponent,
           FilmListComponent,
           HomeComponent,
-          FilterPipe,
-          FiltroPipe,
-          FilterPipeVehicles
+          FiltroPipe
      ],
      imports: [
           BrowserModule,

@@ -1,8 +1,11 @@
 <div class="container-fluid">
     <h2>LISTA DE PELÍCULAS</h2>
+    <p class="label-item">
+        Resultados:<span #cantidadFiltrado></span>
+    </p>
     <div class="row padding_principal_50" >
-        <div class="items-cards col-8" >
-            <div class="card mb-5  w-75" data-toggle="modal" data-target="#detallePelicula" *ngFor="let pelicula of peliculas | filter : searchNombre : searchProductor : searchDirector : searchLanzamiento" (click)="detallePelicula(pelicula)">
+        <div class="items-cards col-8 listado" >
+            <div class="card mb-5  w-75" data-toggle="modal" data-target="#detallePelicula" *ngFor="let pelicula of peliculas | filtro : cantidadFiltrado : { title: searchNombre, producer: searchProductor, director: searchDirector}" (click)="detallePelicula(pelicula)">
                 <div class="row no-gutters">
                     <div class="col-5">
                         <img [src]="pelicula.img" class="card-img imagen-listado">

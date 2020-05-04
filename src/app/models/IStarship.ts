@@ -17,4 +17,5 @@ export interface IStarship {
     pilots?: string[],
     starship_class?: string;
     url?: string;
+    img?: string;
 }

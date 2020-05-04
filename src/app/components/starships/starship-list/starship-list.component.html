@@ -1,12 +1,14 @@
 <div class="container-fluid">
     <h2>LISTA DE NAVES</h2>
+    <p class="label-item">
+        Resultados:<span #cantidadFiltrado></span>
+    </p>
     <div class="row padding_principal_50">
-        <div class="items-cards col-8">
-            <div class="card mb-5  w-75" *ngFor='let starship of starships | filtro : { name: searchName, model: searchModel, cost_in_credits: searchCost_in_credits, passengers: searchPassengers} '>
-                <div class="row no-gutters" data-toggle="modal" data-target="#detalleNave">
-                    <div class="col-5">
-                        <img class="card-img imagen-listado" (click)="seleccionarStarship(starship)"
-                            src="https://motor.elpais.com/wp-content/uploads/2019/12/Porsche-Star-Wars-6-1800x728.jpg">
+        <div class="items-cards col-8 listado">
+            <div class="card mb-5  w-75" *ngFor='let starship of starships | filtro : cantidadFiltrado : { name: searchName, model: searchModel, cost_in_credits: searchCost_in_credits, passengers: searchPassengers}'>
+                <div class="row no-gutters">
+                    <div class="col-5" data-toggle="modal" data-target="#detalleNave" (click)="seleccionarStarship(starship)">
+                        <img class="card-img imagen-listado" [src]="starship.img">
                     </div>
                     <div class="col-7">
                         <ul class="list-group list-group-flush">
