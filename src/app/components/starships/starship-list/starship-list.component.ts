@@ -30,7 +30,6 @@ export class StarshipListComponent implements OnInit {
     }
 
     seleccionarStarship(starship: IStarship) {
-        console.log("entra", starship);
         this.starshipActual = starship;
     }
 
