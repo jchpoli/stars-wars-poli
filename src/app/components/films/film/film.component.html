@@ -1,28 +1,26 @@
 <div class="container-fluid">
-    <strong><h4 class="text-center">LISTA DE PELÍCULAS</h4></strong>
+    <h2>LISTA DE PELÍCULAS</h2>
     <div class="row padding_principal_50" >
- 
         <div class="items-cards col-8" >
-            <div class="card mb-5" style="max-width:540px;" data-toggle="modal" data-target="#detallePelicula" *ngFor="let pelicula of peliculas | filter : searchNombre : searchProductor : searchDirector : searchLanzamiento" (click)="detallePelicula(pelicula)">
+            <div class="card mb-5  w-75" data-toggle="modal" data-target="#detallePelicula" *ngFor="let pelicula of peliculas | filter : searchNombre : searchProductor : searchDirector : searchLanzamiento" (click)="detallePelicula(pelicula)">
                 <div class="row no-gutters">
                     <div class="col-5">
-                        <img [src]="pelicula.img" class="card-img" style="height:100%;">
+                        <img [src]="pelicula.img" class="card-img imagen-listado">
                     </div>
                     <div class="col-7">
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item"><strong style="color:#253681;">Título:</strong> {{pelicula.title}}</li>
-                            <li class="list-group-item"><strong style="color:#253681;">Productores:</strong>{{pelicula.producer}}</li>
-                            <li class="list-group-item"><strong style="color:#253681;">Lanzamiento:</strong>  {{pelicula.created | date}}</li>
-                            <li class="list-group-item"><strong style="color:#253681;">Director:</strong> {{pelicula.director}}</li>
+                            <li class="list-group-item"><span class="label-item">Título:</span>{{pelicula.title}}</li>
+                            <li class="list-group-item"><span class="label-item">Productores:</span>{{pelicula.producer}}</li>
+                            <li class="list-group-item"><span class="label-item">Lanzamiento:</span>{{pelicula.created | date}}</li>
+                            <li class="list-group-item"><span class="label-item">Director:</span>{{pelicula.director}}</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-        <br>
-        <div class="filtros col-4">
-            <div class="flitros" style="background-color: #a7b3ce; padding:15px;">
-                <strong><h5 class="text-center">FILTROS</h5></strong>
+        <div class="col-4">
+            <div class="filtros">
+                <h3 class="text-center">FILTROS</h3>
 
                 <div class="input-group input-group-sm mb-3">
                     <div class="input-group-prepend">

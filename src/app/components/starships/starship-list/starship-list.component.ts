@@ -11,6 +11,10 @@ export class StarshipListComponent implements OnInit {
 
     public starships: IStarship[];
     public starshipActual: IStarship;
+    public searchName: string;
+    public searchModel: string;
+    public searchCost_in_credits: string;
+    public searchPassengers: string;
 
     constructor(private starshipService: StarshipService) { }
 

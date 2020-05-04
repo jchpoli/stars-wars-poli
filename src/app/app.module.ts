@@ -24,6 +24,7 @@ import { NgxSpinnerModule } from "ngx-spinner";
 import {FormsModule} from '@angular/forms';
 import {FilterPipe} from './components/films/film/filterFilms.pipe';
 import { DatePipe } from '@angular/common';
+import { FiltroPipe } from './pipes/filtro.pipe';
 
 @NgModule({
      declarations: [
@@ -42,7 +43,8 @@ import { DatePipe } from '@angular/common';
           PeopleListComponent,
           FilmListComponent,
           HomeComponent,
-          FilterPipe
+          FilterPipe,
+          FiltroPipe
      ],
      imports: [
           BrowserModule,
