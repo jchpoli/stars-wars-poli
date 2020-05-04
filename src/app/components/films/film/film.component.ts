@@ -32,7 +32,7 @@ export class FilmComponent implements OnInit {
 
   detallePelicula(peliculaSeleccionada : IFilms){
     this.peliculaSeleccionada= peliculaSeleccionada;
-    console.log("hola gente asustado?");
+
   }
 
 

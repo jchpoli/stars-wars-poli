@@ -22,7 +22,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SliderModule } from 'angular-image-slider';
 import { NgxSpinnerModule } from "ngx-spinner";
 import {FormsModule} from '@angular/forms';
-import {FilterPipe} from './components/films/film/filterFilm.pipe';
+import {FilterPipe} from './components/films/film/filterFilms.pipe';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
      declarations: [
@@ -54,7 +55,7 @@ import {FilterPipe} from './components/films/film/filterFilm.pipe';
           FormsModule
      ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
-    providers: [],
+    providers: [DatePipe],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

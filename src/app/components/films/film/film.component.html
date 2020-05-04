@@ -1,34 +1,19 @@
 <div class="container-fluid">
-    <div class="row padding_principal_50" style="padding-top: 10px;">
-        <div class="col-2">
-            <strong><p style="font-size:18px;">PELICULAS</p></strong>
-        </div>
-        <div class="col-10 filtro_busqueda">
-            <input type="text" class="form-control" id="busqueda" placeholder="Filtra y realiza tus busquedas...">
-        </div>
-    </div>
+    <strong><h4 class="text-center">LISTA DE PELÍCULAS</h4></strong>
     <div class="row padding_principal_50" >
-
+ 
         <div class="items-cards col-8" >
-            <div class="filtros">
-                <div class="input-group input-group-sm mb-3">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text" id="inputGroup-sizing-default">Fecha Lanzamiento</span>
-                    </div>
-                    <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-default">
-                </div>
-            </div>
-            <div class="card mb-5" style="max-width:540px;" *ngFor="let pelicula of peliculas | filter : searchNombre : searchProductor : searchDirector : searchLanzamiento">
+            <div class="card mb-5" style="max-width:540px;" data-toggle="modal" data-target="#detallePelicula" *ngFor="let pelicula of peliculas | filter : searchNombre : searchProductor : searchDirector : searchLanzamiento" (click)="detallePelicula(pelicula)">
                 <div class="row no-gutters">
                     <div class="col-5">
-                        <img src="https://i.pinimg.com/600x315/1c/49/0a/1c490aa730bac905c902c69d698aedc2.jpg" class="card-img" style="height:100%;">
+                        <img [src]="pelicula.img" class="card-img" style="height:100%;">
                     </div>
                     <div class="col-7">
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Nombre: {{pelicula.title}}</li>
-                            <li class="list-group-item">Productores: {{pelicula.producer}}</li>
-                            <li class="list-group-item">Año Lanzamiento: {{pelicula.created | date}}</li>
-                            <li class="list-group-item">Director: {{pelicula.director}}</li>
+                            <li class="list-group-item"><strong style="color:#253681;">Título:</strong> {{pelicula.title}}</li>
+                            <li class="list-group-item"><strong style="color:#253681;">Productores:</strong>{{pelicula.producer}}</li>
+                            <li class="list-group-item"><strong style="color:#253681;">Lanzamiento:</strong>  {{pelicula.created | date}}</li>
+                            <li class="list-group-item"><strong style="color:#253681;">Director:</strong> {{pelicula.director}}</li>
                         </ul>
                     </div>
                 </div>
@@ -36,34 +21,73 @@
         </div>
         <br>
         <div class="filtros col-4">
-            <strong><p>FILTROS</p></strong>
+            <div class="flitros" style="background-color: #a7b3ce; padding:15px;">
+                <strong><h5 class="text-center">FILTROS</h5></strong>
 
-            <div class="input-group input-group-sm mb-3">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="inputGroup-sizing-default">Nombre</span>
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroup-sizing-default">Nombre</span>
+                    </div>
+                    <input type="text" [(ngModel)]="searchNombre" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-default">
                 </div>
-                <input type="text" [(ngModel)]="searchNombre" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-default">
-            </div>
-            <div class="input-group input-group-sm mb-3">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="inputGroup-sizing-default">Director</span>
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroup-sizing-default">Director</span>
+                    </div>
+                    <input type="text"  [(ngModel)]="searchDirector" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-default" >
                 </div>
-                <input type="text"  [(ngModel)]="searchDirector" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-default" >
-            </div>
-            <div class="input-group input-group-sm mb-3">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="inputGroup-sizing-default">Productores</span>
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroup-sizing-default">Productores</span>
+                    </div>
+                    <input type="text" [(ngModel)]="searchProductor" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-default"  >
                 </div>
-                <input type="text" [(ngModel)]="searchProductor" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-default"  >
-            </div>
-            <div class="input-group input-group-sm mb-3">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="inputGroup-sizing-default">Año Lanzamiento</span>
-                </div>
-                <input type="date" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-default"  >
-            </div>
+            </div>            
         </div>
     </div>
+    <div class="modal fade" id="detallePelicula" tabindex="-1" role="dialog" aria-labelledby="detallePeliculaLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content"  *ngIf="peliculaSeleccionada">
+                <div class="modal-header">
+                    <h5 class="modal-title text-center" id="detallePeliculaLabel">{{peliculaSeleccionada.title}}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <img class="card-img-top imagen-listado"
+                                [src]="peliculaSeleccionada.img">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Caracteristica</th>
+                                            <th scope="col">Detalle</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">Descripcion</th>
+                                            <td>{{peliculaSeleccionada.opening_crawl}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Episodio</th>
+                                            <td>{{peliculaSeleccionada.episode_id}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
 </div>
 
 
