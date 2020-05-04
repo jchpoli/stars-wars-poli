@@ -1,19 +1,19 @@
 <hr>
 <!-- Justified for SM and up Devices -->
 <nav class="menu-bar btn-group btn-group-justified hidden-xs">
-    <div *ngFor="let character of $charactersJSON | async" class="btn-group">
+    <div *ngFor="let people of $peopleJSON | async" class="btn-group">
         <button
-         [ngClass]="{'active': character.name == activeChar}"
+         [ngClass]="{'active': people.name == activeChar}"
          class=" btn btn-warning "
-         (click)="handleCharSelection(character)">{{character.name}}</button></div>
+         (click)="handleCharSelection(people)">{{people.name}}</button></div>
 </nav>
 <!-- Vertical for XS Devices -->
 <nav class="menu-bar btn-group btn-group-vertical hidden-sm hidden-md hidden-lg">
-    <div *ngFor="let character of $charactersJSON | async" class="btn-group">
+    <div *ngFor="let people of $peopleJSON | async" class="btn-group">
         <button
-            [ngClass]="{'active': character.name == activeChar}"
+            [ngClass]="{'active': people.name == activeChar}"
             class=" btn-block btn btn-warning "
-            (click)="handleCharSelection(character)">{{character.name}}
+            (click)="handleCharSelection(people)">{{people.name}}
         </button>
     </div>
 </nav>
