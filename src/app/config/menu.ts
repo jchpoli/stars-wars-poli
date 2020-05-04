@@ -5,6 +5,7 @@ import { FilmComponent } from '../components/films/film/film.component';
 import { PeopleListComponent } from '../components/people/people-list/people-list.component';
 import { PlanetListComponent } from '../components/planets/planet-list/planet-list.component';
 import { VehicleListComponent } from '../components/vehicles/vehicle-list/vehicle-list.component';
+import { VehicleComponent } from '../components/vehicles/vehicle/vehicle.component';
 import { StarshipListComponent } from '../components/starships/starship-list/starship-list.component';
 import { SpecieListComponent } from '../components/species/specie-list/specie-list.component';
 
@@ -27,7 +28,7 @@ export const dataOptionsMenu: DataOptionMenu[] = [
     {
         path: "vehicles",
         description: "Vehículos",
-        component: VehicleListComponent
+        component: VehicleComponent
     },
     {
         path: "starships",
