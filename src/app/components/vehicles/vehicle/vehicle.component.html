@@ -1,1 +1,102 @@
-<p>vehicle works!</p>
+<div class="container-fluid">
+    <strong><h4 class="text-center">LISTA DE VEHÍCULOS</h4></strong>
+    <div class="row padding_principal_50" >
+ 
+        <div class="items-cards col-8" >
+            <div class="card mb-5" style="max-width:540px;" data-toggle="modal" data-target="#detalleVehiculo" *ngFor="let vehiculo of vehiculos | filterv : searchNombre : searchModelo : searchPasajeros" (click)="detalleVehiculo(vehiculo)">
+                <div class="row no-gutters">
+                    <div class="col-5">
+                        <img [src]="vehiculo.img" class="card-img" style="height:100%;">
+                    </div>
+                    <div class="col-7">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><strong >Nombre:</strong>{{vehiculo.name}}</li>
+                            <li class="list-group-item"><strong >Modelo:</strong>{{vehiculo.model}}</li>
+                            <li class="list-group-item"><strong >Pasajeros:</strong>{{vehiculo.passengers}}</li>
+                            <li class="list-group-item"><strong >Fecha Creación:</strong>{{vehiculo.created | date}}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="filtros col-4">
+            <div class="flitros" style="background-color: #a7b3ce; padding:15px;">
+                <strong><h5 class="text-left">FILTROS</h5></strong>
+
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroup-sizing-default">Nombre</span>
+                    </div>
+                    <input type="text" [(ngModel)]="searchNombre" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-default">
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroup-sizing-default">Modelo</span>
+                    </div>
+                    <input type="text"  [(ngModel)]="searchModelo" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-default" >
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroup-sizing-default">Cantidad Pasajeros</span>
+                    </div>
+                    <input type="text"  [(ngModel)]="searchPasajeros" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-default"  >
+                </div>
+            </div>            
+        </div>
+    </div>
+    <div class="modal fade" id="detalleVehiculo" tabindex="-1" role="dialog" aria-labelledby="detalleVehiculoLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content"  *ngIf="selectVehiculo">
+                <div class="modal-header">
+                    <h5 class="modal-title text-center" id="detalleVehiculoLabel">{{selectVehiculo.name}}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <img class="card-img-top imagen-listado" [src]="selectVehiculo.img">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Caracteristica</th>
+                                            <th scope="col">Detalle</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">Velocidad Maxima</th>
+                                            <td>{{selectVehiculo.max_atmosphering_speed}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Manufacturado</th>
+                                            <td>{{selectVehiculo.manufacturer}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Costo</th>
+                                            <td>{{selectVehiculo.cost_in_credits}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Longitud</th>
+                                            <td>{{selectVehiculo.length}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Modelo</th>
+                                            <td>{{selectVehiculo.model}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+</div>

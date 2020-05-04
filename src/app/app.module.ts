@@ -23,6 +23,7 @@ import { SliderModule } from 'angular-image-slider';
 import { NgxSpinnerModule } from "ngx-spinner";
 import {FormsModule} from '@angular/forms';
 import {FilterPipe} from './components/films/film/filterFilms.pipe';
+import {FilterPipeVehicles} from './components/vehicles/vehicle/filterVehicle.pipe';
 import { DatePipe } from '@angular/common';
 
 @NgModule({
@@ -42,7 +43,8 @@ import { DatePipe } from '@angular/common';
           PeopleListComponent,
           FilmListComponent,
           HomeComponent,
-          FilterPipe
+          FilterPipe,
+          FilterPipeVehicles
      ],
      imports: [
           BrowserModule,
