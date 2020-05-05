@@ -13,6 +13,9 @@ import { IStarship } from 'src/app/models/IStarship';
 export class StarshipComponent implements OnInit {
 
     @Input() public starship: IStarship;
+    public searchClimate: string;
+    public searchDiameter: string;
+    public searchGravity: string;
 
     constructor(private starshipService: StarshipService, private route: ActivatedRoute) { }
 

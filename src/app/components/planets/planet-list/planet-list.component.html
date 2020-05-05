@@ -1,22 +1,55 @@
 <div class="container-fluid w-75">
      <h2>Lista de Planetas</h2>
-     <div class="card mb-3" *ngFor='let planet of planets'>
-          <div class="row no-gutters">
-               <div class="col-md-4">
-                    <img class="card-img-top imagen-listado"
-                         src="assets/images/mustafar-tall.jpg">
-               </div>
-               <div class="col-md-8">
-                    <div class="card-body">
-                         <ul class="lista-datos">
-                              <li class="card-text"><strong>Nombre: </strong>{{planet.name}}</li>
-                              <li class="card-text"><strong>Terreno: </strong>{{planet.terrain}}</li>
-                              <li class="card-text"><strong>Clima: </strong>{{planet.climate}}</li>
-                              <li class="card-text"><strong>Diametro: </strong>{{planet.diameter}} KM</li>
-                         </ul>
+     <p class="label-item">
+          Resultados:<span #cantidadFiltrado></span>
+      </p>
+     <div class="row padding_principal_50">
+          <div class="items-cards col-8 listado">
+                      <div class="card mb-3 " *ngFor='let planet of planets | filtro : cantidadFiltrado : { name: searchName, diameter: searchDiameter, terrain: searchTerrain}'>
+                    <div class="row no-gutters ">
+                         <div class="col-md-4">
+                              <img class="card-img-top imagen-listado"
+                                   src="assets/images/mustafar-tall.jpg">
+                         </div>
+                         <div class="col-md-8">
+                              <div class="card-body">
+                                   <ul class="lista-datos">
+                                        <li class="card-text"><strong>Nombre: </strong>{{planet.name}}</li>
+                                        <li class="card-text"><strong>Terreno: </strong>{{planet.terrain}}</li>
+                                        <li class="card-text"><strong>Clima: </strong>{{planet.climate}}</li>
+                                        <li class="card-text"><strong>Diametro: </strong>{{planet.diameter}} KM</li>
+                                   </ul>
+                              </div>
+                         </div>
                     </div>
                </div>
           </div>
+          <div class="col-4">
+               <div class="filtros">
+                   <h3 class="text-center">FILTROS</h3>
+                   <div class="input-group input-group-sm mb-3">
+                       <div class="input-group-prepend">
+                           <span class="input-group-text" id="inputGroup-sizing-default">Nombre</span>
+                       </div>
+                       <input type="text" [(ngModel)]="searchName" class="form-control" aria-label="Small"
+                           aria-describedby="inputGroup-sizing-default" >
+                   </div>
+                   <div class="input-group input-group-sm mb-3">
+                       <div class="input-group-prepend">
+                           <span class="input-group-text" id="inputGroup-sizing-default">Diametro</span>
+                       </div>
+                       <input type="text" [(ngModel)]="searchDiameter" class="form-control" aria-label="Small"
+                           aria-describedby="inputGroup-sizing-default" >
+                   </div>
+                   <div class="input-group input-group-sm mb-3">
+                       <div class="input-group-prepend">
+                           <span class="input-group-text" id="inputGroup-sizing-default">Terreno</span>
+                       </div>
+                       <input type="text" [(ngModel)]="searchTerrain" class="form-control" aria-label="Small"
+                           aria-describedby="inputGroup-sizing-default" >
+                   </div>
+               </div>
+           </div>
      </div>
 </div>
 

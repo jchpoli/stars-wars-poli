@@ -1,19 +1,52 @@
 <div class="container-fluid w-75">
     <h2>LISTA DE ESPECIES</h2>
-    <div class="card mb-3" *ngFor='let especie of especies'>
-        <div class="row no-gutters">
-            <div class="col-md-4">
-                <img class="card-img-top imagen-listado"
-                    src="https://defa.wdfiles.com/local--files/yze-species/Aliens%20-%20x%20many.jpg">
+    <p class="label-item">
+        Resultados:<span #cantidadFiltrado></span>
+    </p>
+    <div class="row padding_principal_50">
+        <div class="items-cards col-8 listado">
+            <div class="card mb-3 listado"  *ngFor='let especie of especies | filtro : cantidadFiltrado : { name: searchName, language: searchLanguage, classification: searchClassification}'>
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <img class="card-img-top imagen-listado"
+                            src="https://defa.wdfiles.com/local--files/yze-species/Aliens%20-%20x%20many.jpg">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <ul class="lista-datos">
+                                <li class="card-text"><strong>Nombre:</strong>{{especie.name}}</li>
+                                <li class="card-text"><strong>Lenguaje:</strong>{{especie.language}}</li>
+                                <li class="card-text"><strong>Clasificaci&oacute;n:</strong>{{especie.classification}}</li>
+                                <li class="card-text"><strong>Designaci&oacute;n:</strong>{{especie.designation}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-8">
-                <div class="card-body">
-                    <ul class="lista-datos">
-                        <li class="card-text"><strong>Nombre:</strong>{{especie.name}}</li>
-                        <li class="card-text"><strong>Lenguaje:</strong>{{especie.language}}</li>
-                        <li class="card-text"><strong>Clasificaci&oacute;n:</strong>{{especie.classification}}</li>
-                        <li class="card-text"><strong>Designaci&oacute;n:</strong>{{especie.designation}}</li>
-                    </ul>
+        </div>
+        <div class="col-4">
+            <div class="filtros">
+                <h3 class="text-center">FILTROS</h3>
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Nombre</span>
+                    </div>
+                    <input type="text" [(ngModel)]="searchName" class="form-control" aria-label="Small"
+                        aria-describedby="inputGroup-sizing-default" >
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Lenguaje</span>
+                    </div>
+                    <input type="text" [(ngModel)]="searchLanguage" class="form-control" aria-label="Small"
+                        aria-describedby="inputGroup-sizing-default" >
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Clasificación</span>
+                    </div>
+                    <input type="text" [(ngModel)]="searchClassification" class="form-control" aria-label="Small"
+                        aria-describedby="inputGroup-sizing-default" >
                 </div>
             </div>
         </div>

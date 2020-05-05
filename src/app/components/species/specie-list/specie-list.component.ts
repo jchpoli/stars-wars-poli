@@ -10,6 +10,10 @@ import { ISpecie } from 'src/app/models/ISpecie';
 export class SpecieListComponent implements OnInit {
 
     public especies: ISpecie[];
+    public searchName: string;
+    public searchLanguage: string;
+    public searchClassification: string;
+
     constructor(private specieService: SpecieService) { }
 
     ngOnInit(): void {
