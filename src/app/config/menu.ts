@@ -2,7 +2,6 @@ import { DataOptionMenu } from '../models/data-option-menu';
 
 import { FilmListComponent } from '../components/films/film-list/film-list.component';
 import { FilmComponent } from '../components/films/film/film.component';
-import { PeopleListComponent } from '../components/people/people-list/people-list.component';
 import { PeopleComponent } from '../components/people/people/people.component';
 import { PlanetListComponent } from '../components/planets/planet-list/planet-list.component';
 import { VehicleListComponent } from '../components/vehicles/vehicle-list/vehicle-list.component';

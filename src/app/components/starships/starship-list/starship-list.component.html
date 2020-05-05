@@ -1,19 +1,56 @@
-<div class="container-fluid w-75">
+<div class="container-fluid">
     <h2>LISTA DE NAVES</h2>
-    <div class="card mb-3 item-lista" *ngFor='let starship of starships'>
-        <div class="row no-gutters" data-toggle="modal" data-target="#detalleNave">
-            <div class="col-md-4">
-                <img class="card-img-top imagen-listado" (click)="seleccionarStarship(starship)"
-                    src="https://motor.elpais.com/wp-content/uploads/2019/12/Porsche-Star-Wars-6-1800x728.jpg">
+    <p class="label-item">
+        Resultados:<span #cantidadFiltrado></span>
+    </p>
+    <div class="row padding_principal_50">
+        <div class="items-cards col-8 listado">
+            <div class="card mb-5  w-75" *ngFor='let starship of starships | filtro : cantidadFiltrado : { name: searchName, model: searchModel, cost_in_credits: searchCost_in_credits, passengers: searchPassengers}'>
+                <div class="row no-gutters">
+                    <div class="col-5" data-toggle="modal" data-target="#detalleNave" (click)="seleccionarStarship(starship)">
+                        <img class="card-img imagen-listado" [src]="starship.img">
+                    </div>
+                    <div class="col-7">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><span class="label-item">Nombre:</span>{{starship.name}}</li>
+                            <li class="list-group-item"><span class="label-item">Modelo:</span>{{starship.model}}</li>
+                            <li class="list-group-item"><span class="label-item">Costo:</span>{{starship.cost_in_credits}}</li>
+                            <li class="list-group-item"><span class="label-item">Pasajeros:</span>{{starship.passengers}}</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-8">
-                <div class="card-body">
-                    <ul class="lista-datos">
-                        <li class="card-text"><strong>Nombre:</strong>{{starship.name}}</li>
-                        <li class="card-text"><strong>Modelo:</strong>{{starship.model}}</li>
-                        <li class="card-text"><strong>Costo:</strong>{{starship.cost_in_credits}}</li>
-                        <li class="card-text"><strong>Pasajeros:</strong>{{starship.passengers}}</li>
-                    </ul>
+        </div>
+        <div class="col-4">
+            <div class="filtros">
+                <h3 class="text-center">FILTROS</h3>
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Nombre</span>
+                    </div>
+                    <input type="text" [(ngModel)]="searchName" class="form-control" aria-label="Small"
+                        aria-describedby="inputGroup-sizing-default" >
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Modelo</span>
+                    </div>
+                    <input type="text" [(ngModel)]="searchModel" class="form-control" aria-label="Small"
+                        aria-describedby="inputGroup-sizing-default" >
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Costo</span>
+                    </div>
+                    <input type="text" [(ngModel)]="searchCost_in_credits" class="form-control" aria-label="Small"
+                        aria-describedby="inputGroup-sizing-default" >
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Pasajeros</span>
+                    </div>
+                    <input type="text" [(ngModel)]="searchPassengers" class="form-control" aria-label="Small"
+                        aria-describedby="inputGroup-sizing-default" >
                 </div>
             </div>
         </div>
@@ -21,7 +58,7 @@
     <div class="modal fade" id="detalleNave" tabindex="-1" role="dialog" aria-labelledby="detalleNaveLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-xl" role="document">
-            <div class="modal-content"  *ngIf="starshipActual">
+            <div class="modal-content" *ngIf="starshipActual">
                 <div class="modal-header">
                     <h5 class="modal-title text-center" id="detalleNaveLabel">{{starshipActual.name}}</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -33,5 +70,5 @@
                 </div>
             </div>
         </div>
-    </div> 
+    </div>
 </div>

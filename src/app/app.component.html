@@ -3,8 +3,7 @@
         <a href="#" class="nav-link">
             <img src="assets/images/logo.png" alt="" class="logo">
         </a>
-        <a *ngFor="let option of optionsMenu" [routerLink]="option.path" routerLinkActive="active"
-            class="nav-link">
+        <a *ngFor="let option of optionsMenu" [routerLink]="option.path" routerLinkActive="active" class="nav-link">
             {{option.description}}
         </a>
     </nav>
@@ -13,80 +12,58 @@
     <router-outlet></router-outlet>
     <ngx-spinner></ngx-spinner>
 </main>
-
-<div class="container" *ngIf="show">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="error-template">
-                <h1>
-                    Oops!</h1>
-                <h2>
-                    no existe informacion para visualizar
-                </h2>
-            </div>
-        </div>
-    </div>
-</div>
 <!-- Footer -->
 <footer class="page-footer font-small unique-color-dark">
-    <div class="container text-center text-md-left mt-5" >
-      <div class="row mt-3">
-        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4" style="margin-top: 10px;">
-          <h6 class="text-uppercase font-weight-bold">Star Wars Proyecto </h6>
-          <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-          <p>Proyecto de Front-End, universidad Politecnico Grancolombiano, año 2020</p>
-        </div>
-        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4" style="margin-top: 10px;">
-          <h6 class="text-uppercase font-weight-bold">Enlaces</h6>
-          <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-          <p>
-            <a href="components/home/home.component.html" class="font-weight-bold" style="color:#0932a0">Home</a>
-          </p>
-          <p>
-            <a href="components/films/film/film.component.html" class="font-weight-bold" style="color:#0932a0">Peliculas</a>
-          </p>
-          <p>
-            <a href="components/planets/planet/planet.component.html" class="font-weight-bold" style="color:#0932a0">Planetas</a>
-          </p>
-          <p>
-            <a href="components/vehicles/vehicle/vehicle.component.html" class="font-weight-bold" style="color:#0932a0">Vehiculos</a>
-          </p>
-  
-        </div>
+    <div class="text-center text-md-left">
+        <nav class="row">
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                <h6 class="text-uppercase font-weight-bold">Star Wars Proyecto </h6>
+                <p>Proyecto de Front-End, universidad Politecnico Grancolombiano, año 2020</p>
+            </div>
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                <h6 class="text-uppercase font-weight-bold">Enlaces</h6>
+                <p>
+                    <a routerLink="/" >Home</a>
+                </p>
+                <p>
+                    <a routerLink="/films" >Peliculas</a>
+                </p>
+                <p>
+                    <a routerLink="/planets" >Planetas</a>
+                </p>
+                <p>
+                    <a routerLink="/vehicles" >Vehiculos</a>
+                </p>
 
-        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4" style="margin-top: 10px;">
-  
-          <h6 class="text-uppercase font-weight-bold">Otros Enlaces</h6>
-          <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-          <p>
-            <a href="components/species/specie/specie.component.html" class="font-weight-bold" style="color:#0932a0">Especies</a>
-          </p>
-          <p>
-            <a href="components/people/people/people.component.html" class="font-weight-bold" style="color:#0932a0">Personajes</a>
-          </p>
-          <p>
-            <a href="components/starships/starship/starship.component.html" class="font-weight-bold" style="color:#0932a0">Naves</a>
-          </p>
-  
-        </div>
+            </div>
 
-        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4" style="margin-top: 10px;">
-  
-          <h6 class="text-uppercase font-weight-bold">Contactanos</h6>
-          <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-          <p>
-            <i class="fas fa-home mr-3"></i> Bogotá D.C, Colombia</p>
-          <p>
-            <i class="fas fa-envelope mr-3"></i>StarWars@example.com</p>
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
 
-        </div>
+                <h6 class="text-uppercase font-weight-bold">Otros Enlaces</h6>
+                <p>
+                    <a routerLink="/species">Especies</a>
+                </p>
+                <p>
+                    <a routerLink="/characters">Personajes</a>
+                </p>
+                <p>
+                    <a routerLink="/starships">Naves</a>
+                </p>
 
-  
-      </div>
- 
-  
+            </div>
+
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+
+                <h6 class="text-uppercase font-weight-bold">Contactanos</h6>
+                <p>Bogotá D.C, Colombia</p>
+                <p>StarWars@example.com</p>
+
+            </div>
+
+
+        </nav>
+
+
     </div>
 
 </footer>
-  
-  

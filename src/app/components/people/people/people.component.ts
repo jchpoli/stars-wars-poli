@@ -18,7 +18,7 @@ export class PeopleComponent implements OnInit {
   searchEstatura;
   searchPeso;
   searchFechaCreacion;
-  imagenes = ["../../assets/images/Vehiculo1.jpg","../../assets/images/Vehiculo2.jpg","../../assets/images/Vehiculo3.jpg","../../assets/images/Vehiculo4.jpg","../../assets/images/Vehiculo5.jpg","../../assets/images/Vehiculo6.jpg","../../assets/images/Vehiculo7.jpg","../../assets/images/Vehiculo8.jpg","../../assets/images/Vehiculo9.jpg","../../assets/images/Vehiculo10.jpg"];
+  imagenes = ["../../assets/images/persona1.jpg","../../assets/images/persona2.jpg","../../assets/images/persona3.jpg","../../assets/images/persona4.jpg","../../assets/images/persona5.jpg","../../assets/images/persona6.jpg","../../assets/images/persona7.jpg","../../assets/images/persona8.jpg","../../assets/images/persona9.jpg","../../assets/images/persona10.jpg"];
 
   async ngOnInit() {
     this.apiResponse = await this.httpClient.get('https://swapi.dev/api/people/').toPromise();

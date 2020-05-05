@@ -14,7 +14,6 @@ import { VehicleListComponent } from './components/vehicles/vehicle-list/vehicle
 import { StarshipListComponent } from './components/starships/starship-list/starship-list.component';
 import { SpecieListComponent } from './components/species/specie-list/specie-list.component';
 import { PlanetListComponent } from './components/planets/planet-list/planet-list.component';
-import { PeopleListComponent } from './components/people/people-list/people-list.component';
 import { FilmListComponent } from './components/films/film-list/film-list.component';
 import { NgBootstrapModule } from './ng-bootstrap/ng-bootstrap.module';
 import { HomeComponent } from './components/home/home.component';
@@ -22,11 +21,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SliderModule } from 'angular-image-slider';
 import { NgxSpinnerModule } from "ngx-spinner";
 import {FormsModule} from '@angular/forms';
-import {FilterPipe} from './components/films/film/filterFilms.pipe';
-import {FilterPipeVehicles} from './components/vehicles/vehicle/filterVehicle.pipe';
-import {FilterPipePeople} from './components/people/people/filterPeople.pipe';
 import { DatePipe } from '@angular/common';
-
+import { FiltroPipe } from './pipes/filtro.pipe';
+import { FiltroPipePeople } from './components/people/people/filterPeople.pipe';
 @NgModule({
      declarations: [
           AppComponent,
@@ -41,12 +38,10 @@ import { DatePipe } from '@angular/common';
           StarshipListComponent,
           SpecieListComponent,
           PlanetListComponent,
-          PeopleListComponent,
           FilmListComponent,
           HomeComponent,
-          FilterPipe,
-          FilterPipeVehicles,
-          FilterPipePeople
+          FiltroPipe,
+          FiltroPipePeople
      ],
      imports: [
           BrowserModule,

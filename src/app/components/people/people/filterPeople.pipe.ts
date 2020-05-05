@@ -4,7 +4,7 @@ import { DatePipe } from '@angular/common'
 @Pipe({
   name: 'filterpeople'
 })
-export class FilterPipePeople implements PipeTransform {
+export class FiltroPipePeople implements PipeTransform {
   constructor(private datePipe: DatePipe) {}
   transform(items: any[], searchNombre : string, searchGenero: string, searchEstatura: string, searchPeso: string ){
         if (items && items.length){

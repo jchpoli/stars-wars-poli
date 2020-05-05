@@ -2,9 +2,9 @@
     <strong><h4 class="text-center">LISTA DE PERSONAJES</h4></strong>
     <div class="row padding_principal_50" >
  
-        <div class="items-cards col-8" >
+        <div class="items-cards col-8 listado" >
 
-  <div class="card mb-5" style="max-width:540px;" data-toggle="modal" data-target="#detallePersonaje" *ngFor="let personaje of personajes | filterpeople : searchNombre :  searchGenero :  searchEstatura : searchPeso " (click)="verPersonaje(personaje)">
+  <div class="card mb-5" style="max-width:540px;" data-toggle="modal" data-target="#detallePersonaje" *ngFor="let personaje of personajes | filterpeople : searchNombre :  searchGenero :  searchEstatura : searchPeso" (click)="verPersonaje(personaje)">
                 <div class="row no-gutters">
                     <div class="col-5">
                         <img [src]="personaje.img" class="card-img" style="height:100%;">

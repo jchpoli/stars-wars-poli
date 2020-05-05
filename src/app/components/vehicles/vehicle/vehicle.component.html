@@ -1,12 +1,14 @@
 <div class="container-fluid">
-    <strong><h4 class="text-center">LISTA DE VEHÍCULOS</h4></strong>
+    <h2>LISTA DE VEHÍCULOS</h2>
+    <p class="label-item">
+        Resultados:<span #cantidadFiltrado></span>
+    </p>
     <div class="row padding_principal_50" >
- 
-        <div class="items-cards col-8" >
-            <div class="card mb-5" style="max-width:540px;" data-toggle="modal" data-target="#detalleVehiculo" *ngFor="let vehiculo of vehiculos | filterv : searchNombre : searchModelo : searchPasajeros" (click)="detalleVehiculo(vehiculo)">
+        <div class="items-cards col-8 listado" >
+            <div class="card mb-5  w-75" *ngFor="let vehiculo of vehiculos | filtro : cantidadFiltrado : { name: searchNombre, model: searchModelo, passengers: searchPasajeros}">
                 <div class="row no-gutters">
-                    <div class="col-5">
-                        <img [src]="vehiculo.img" class="card-img" style="height:100%;">
+                    <div class="col-5" data-toggle="modal" data-target="#detalleVehiculo" (click)="detalleVehiculo(vehiculo)">
+                        <img [src]="vehiculo.img" class="card-img imagen-listado" >
                     </div>
                     <div class="col-7">
                         <ul class="list-group list-group-flush">
@@ -20,10 +22,9 @@
             </div>
         </div>
         <br>
-        <div class="filtros col-4">
-            <div class="flitros" style="background-color: #a7b3ce; padding:15px;">
-                <strong><h5 class="text-left">FILTROS</h5></strong>
-
+        <div class="col-4">
+            <div class="filtros">
+                <h3 class="text-center">FILTROS</h3>
                 <div class="input-group input-group-sm mb-3">
                     <div class="input-group-prepend">
                       <span class="input-group-text" id="inputGroup-sizing-default">Nombre</span>
