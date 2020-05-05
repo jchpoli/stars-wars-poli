@@ -24,6 +24,7 @@ import { NgxSpinnerModule } from "ngx-spinner";
 import {FormsModule} from '@angular/forms';
 import {FilterPipe} from './components/films/film/filterFilms.pipe';
 import {FilterPipeVehicles} from './components/vehicles/vehicle/filterVehicle.pipe';
+import {FilterPipePeople} from './components/people/people/filterPeople.pipe';
 import { DatePipe } from '@angular/common';
 
 @NgModule({
@@ -44,7 +45,8 @@ import { DatePipe } from '@angular/common';
           FilmListComponent,
           HomeComponent,
           FilterPipe,
-          FilterPipeVehicles
+          FilterPipeVehicles,
+          FilterPipePeople
      ],
      imports: [
           BrowserModule,
